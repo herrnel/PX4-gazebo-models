@@ -60,23 +60,7 @@
       </plugin>
 
 
-      <!-- Teleop docked on the side -->
-      <plugin filename="Teleop" name="Teleop">
-        <ignition-gui>
-          <title>Teleop</title>
-          <property type="bool" key="showTitleBar">false</property>
-          <property type="bool" key="resizable">false</property>
-          <property type="double" key="height">200</property>
-          <property type="double" key="width">120</property>
-          <property type="double" key="z">1</property>
-          <property type="string" key="state">docked</property>
-          <anchors target="3D View">
-            <line own="right" target="right"/>
-            <line own="top" target="top"/>
-          </anchors>
-        </ignition-gui>
-        <topic>/X3/cmd_vel</topic>
-      </plugin>
+      <!-- Teleop GUI removed along with the X3 model (it published to /X3/cmd_vel which no longer exists). -->
 
       <!-- Entity tree -->
       <plugin filename="EntityTree" name="Entity tree">
@@ -209,12 +193,7 @@
       <visualize>false</visualize>
     </light>
 
-    <!-- X3 drone (model://X3 resolved via GZ_SIM_RESOURCE_PATH; mav_desc models path is first in launch) -->
-    <include>
-      <name>X3</name>
-      <uri>model://X3</uri>
-      <pose>0 0 0 0 0 0.0</pose>
-    </include>
+    <!-- X3 decorative drone removed: it spawned at origin and got in the way of the PX4-controlled x500. -->
 
     <include>
       <static>true</static>
